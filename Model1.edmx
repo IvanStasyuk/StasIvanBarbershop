@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище BarbershopIvanModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище BarbershopIvanModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6013: Первичный ключ в таблице или представлении "BarbershopIvan.dbo.BarbershopTovar" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
         <EntityType Name="BarbershopTovar">
@@ -43,13 +43,28 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_Clients_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="idRole" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Хранилище BarbershopIvanModelContainer">
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Clients_Roles" Association="Self.FK_Clients_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BarbershopIvanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -64,6 +79,7 @@
           <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idRole" Type="Int32" />
+          <NavigationProperty Name="Roles" Relationship="BarbershopIvanModel.FK_Clients_Roles" FromRole="Clients" ToRole="Roles" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -71,6 +87,7 @@
           </Key>
           <Property Name="idRole" Type="Int32" Nullable="false" />
           <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="BarbershopIvanModel.FK_Clients_Roles" FromRole="Roles" ToRole="Clients" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -86,7 +103,23 @@
           <EntitySet Name="Clients" EntityType="Self.Clients" />
           <EntitySet Name="Roles" EntityType="Self.Roles" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Clients_Roles" Association="BarbershopIvanModel.FK_Clients_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Clients_Roles">
+          <End Type="BarbershopIvanModel.Roles" Role="Roles" Multiplicity="0..1" />
+          <End Type="BarbershopIvanModel.Clients" Role="Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="idRole" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="idRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

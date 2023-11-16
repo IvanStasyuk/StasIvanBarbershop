@@ -21,5 +21,7 @@ namespace StasIvanBarbershop
         public string Login { get; set; }
         public string Password { get; set; }
         public Nullable<int> idRole { get; set; }
+    
+        public virtual Roles Roles { get; set; }
     }
 }
