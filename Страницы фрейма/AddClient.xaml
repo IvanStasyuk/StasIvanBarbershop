@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StasIvanBarbershop.Страницы_фрейма"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddClient">
+      Title="Добавить клиента">
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>

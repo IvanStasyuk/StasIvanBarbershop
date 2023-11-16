@@ -49,7 +49,7 @@ namespace StasIvanBarbershop.Страницы_фрейма
                 errorsDT.AppendLine("Введите логин");
             if (BoxPasswordName.Text == null)
                 errorsDT.AppendLine("Введите пароль");
-            errorsDT.AppendLine(ToString());
+            errorsDT.Clear();
         }
     }
 }
