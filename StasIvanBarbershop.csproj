@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,8 +68,16 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Autorisation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager.cs" />
+    <Compile Include="Pages\Autorisation.xaml.cs">
+      <DependentUpon>Autorisation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,8 +103,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
+    <Resource Include="Resources\5d7d94d3e948d06e3fe93ded86be89e8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\barber-shop-logo-clipart-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-мужчина-расчесывает-волосы-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\priority-headline-logo-square.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\priority-headline-logo-square.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,6 +23,25 @@ namespace StasIvanBarbershop
         public MainWindow()
         {
             InitializeComponent();
+            Manager.MyFrame = MyFrame;
+            Manager.MyFrame.Navigate(new Pages.Autorisation());
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MyFrame.GoBack();
+        }
+
+        private void MyFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (Manager.MyFrame.CanGoBack)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnBack.Visibility = Visibility.Hidden;
+            }
         }
     }
 }
