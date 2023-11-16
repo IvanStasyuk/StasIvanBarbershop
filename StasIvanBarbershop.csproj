@@ -80,6 +80,9 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Страницы фрейма\AddClient.xaml.cs">
+      <DependentUpon>AddClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Страницы фрейма\ClientTable.xaml.cs">
       <DependentUpon>ClientTable.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <DependentUpon>Барбершоп.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Страницы фрейма\AddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Страницы фрейма\Autorisation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

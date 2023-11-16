@@ -28,10 +28,16 @@ namespace StasIvanBarbershop.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient());
+            return;
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
 
         }
