@@ -10,21 +10,10 @@
 namespace StasIvanBarbershop
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Clients
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int id { get; set; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public string Patronymic { get; set; }
-        public string Telefon { get; set; }
-        public string DateOfBirthday { get; set; }
-        public string Gender { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> idRole { get; set; }
-    
-        public virtual Roles Roles { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

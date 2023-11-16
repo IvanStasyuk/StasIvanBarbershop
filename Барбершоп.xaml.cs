@@ -37,10 +37,12 @@ namespace StasIvanBarbershop
             if (Manager.MyFrame.CanGoBack)
             {
                 btnBack.Visibility = Visibility.Visible;
+                butGost.Visibility = Visibility.Hidden;
             }
             else
             {
                 btnBack.Visibility = Visibility.Hidden;
+                butGost.Visibility = Visibility.Visible;
             }
         }
 

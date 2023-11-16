@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="addf73624534449db8a937318e9b71ab" Name="Diagram1">
-        <EntityTypeShape EntityType="BarbershopIvanModel.Clients" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BarbershopIvanModel.Roles" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BarbershopIvanModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarbershopIvanModel.Clients" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="BarbershopIvanModel.Roles" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="BarbershopIvanModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
         <AssociationConnector Association="BarbershopIvanModel.FK_Clients_Roles" />
       </Diagram>
     </edmx:Diagrams>
