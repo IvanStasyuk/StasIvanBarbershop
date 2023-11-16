@@ -37,7 +37,7 @@ namespace StasIvanBarbershop.Pages
                 MessageBox.Show("Пользователь не найден", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            if (CaptchaInput.Text == null && VhodClient.id > 0)
+            else if (CaptchaInput.Text == null)
             {
                 MessageBox.Show("Введите капчу", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
