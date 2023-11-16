@@ -50,8 +50,6 @@ namespace StasIvanBarbershop.Страницы_фрейма
             if (BoxPasswordName.Text == null)
                 errorsDT.AppendLine("Введите пароль");
             errorsDT.AppendLine(ToString());
-
-
         }
     }
 }

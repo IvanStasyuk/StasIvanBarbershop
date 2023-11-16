@@ -30,7 +30,6 @@ namespace StasIvanBarbershop.Pages
             StringBuilder errors = new StringBuilder();
             LoginBox.AppendText(errors.ToString());
             PasswordBox.AppendText(errors.ToString());
-            errors.ToString();
 
             var VhodClient = BarbershopIvanEntities.GetContext().Clients.FirstOrDefault(x => x.Login == LoginBox.Text && x.Password == PasswordBox.Text);
             if (VhodClient == null)

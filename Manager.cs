@@ -10,5 +10,7 @@ namespace StasIvanBarbershop
     internal class Manager
     {
         public static Frame MyFrame;
+
+        public static Clients _currentUser;
     }
 }

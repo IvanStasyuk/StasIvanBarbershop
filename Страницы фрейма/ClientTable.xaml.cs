@@ -34,7 +34,7 @@ namespace StasIvanBarbershop.Pages
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-
+            var ClientRemoving = BarbershopIvanEntities.GetContext().Clients.ToList();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
