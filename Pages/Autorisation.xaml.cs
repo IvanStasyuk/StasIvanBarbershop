@@ -24,5 +24,10 @@ namespace StasIvanBarbershop.Pages
         {
             InitializeComponent();
         }
+
+        private void btnVhod_Click(object sender, RoutedEventArgs e)
+        {
+            var VhodClient = BarbershopIvanEntities. 
+        }
     }
 }
