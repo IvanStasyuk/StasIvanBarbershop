@@ -30,12 +30,22 @@ namespace StasIvanBarbershop.Pages
             StringBuilder errors = new StringBuilder();
             LoginBox.AppendText(errors.ToString());
             PasswordBox.AppendText(errors.ToString());
-            
+            errors.ToString();
+
             var VhodClient = BarbershopIvanEntities.GetContext().Clients.FirstOrDefault(x => x.Login == LoginBox.Text && x.Password == PasswordBox.Text);
             if (VhodClient == null)
             {
                 MessageBox.Show("Пользователь не найден", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
+            }
+            if (CaptchaInput.Text == null && VhodClient.id > 0)
+            {
+                MessageBox.Show("Введите капчу", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            if (CaptchaInput.Text != "ABCDEF")
+            {
+                MessageBox.Show("Капча не верна", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
                 switch (VhodClient.idRole)

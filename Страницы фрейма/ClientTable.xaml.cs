@@ -28,7 +28,7 @@ namespace StasIvanBarbershop.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient());
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient(null));
             return;
         }
 
@@ -39,7 +39,7 @@ namespace StasIvanBarbershop.Pages
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient((sender as Button).DataContext as Clients));
         }
     }
 }
