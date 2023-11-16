@@ -15,6 +15,14 @@ namespace StasIvanBarbershop
     
     public partial class BarbershopIvanEntities : DbContext
     {
+        private static BarbershopIvanEntities _context;
+
+        public static BarbershopIvanEntities GetContext()
+        {
+            if (_context == null)
+                _context = new BarbershopIvanEntities();
+            return _context;
+        }
         public BarbershopIvanEntities()
             : base("name=BarbershopIvanEntities")
         {

@@ -43,5 +43,12 @@ namespace StasIvanBarbershop
                 btnBack.Visibility = Visibility.Hidden;
             }
         }
+
+        private void butGost_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Добро пожаловать, гость", "Авторизация успешна", MessageBoxButton.OK, MessageBoxImage.Information);
+            Manager.MyFrame.Navigate(new Pages.ClientTable());
+            return;
+        }
     }
 }

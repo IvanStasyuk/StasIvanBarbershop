@@ -24,7 +24,16 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <DataGrid x:Name="DTBarbershopClient" Grid.ColumnSpan="5" Grid.RowSpan="4" IsReadOnly="True" AutoGenerateColumns="False">
-            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="135"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="135"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" Width="135"></DataGridTextColumn>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="135"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="135"></DataGridTextColumn>
+            </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="btnAdd" Content="Добавить" Grid.Column="1" Grid.Row="4" Style="{StaticResource ButtonSave}" Click="btnAdd_Click"></Button>
+        <Button x:Name="btnDel" Content="Удалить" Grid.Column="3" Grid.Row="4" Style="{StaticResource ButtonDelete}" Click="btnDel_Click"></Button>
     </Grid>
 </Page>

@@ -25,5 +25,15 @@ namespace StasIvanBarbershop.Pages
             InitializeComponent();
             DTBarbershopClient.ItemsSource = BarbershopIvanEntities.GetContext().Clients.ToList();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
