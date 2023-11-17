@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="BarbershopIvanModel.Roles" Width="1.5" PointX="0.75" PointY="1.75" />
         <EntityTypeShape EntityType="BarbershopIvanModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
         <AssociationConnector Association="BarbershopIvanModel.FK_Clients_Roles" />
+        <EntityTypeShape EntityType="BarbershopIvanModel.DatesVisits" Width="1.5" PointX="5" PointY="3.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

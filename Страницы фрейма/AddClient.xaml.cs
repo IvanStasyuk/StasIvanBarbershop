@@ -20,36 +20,55 @@ namespace StasIvanBarbershop.Страницы_фрейма
     /// </summary>
     public partial class AddClient : Page
     {
+        private Clients _currentUser = new Clients();
         public AddClient(Clients context)
         {
             InitializeComponent();
-            if (context == null)
-            {
-                context = new Clients();
-            }
+            if (context != null)
+                _currentUser = context;
+            DataContext = _currentUser;
 
         }
-
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errorsDT = new StringBuilder();
-            if (BoxFamilia.Text == null)
+            if (string.IsNullOrEmpty(BoxFamilia.Text))
                 errorsDT.AppendLine("Введите фамилию");
-            if (BoxName.Text == null)
+            if (string.IsNullOrEmpty(BoxName.Text))
                 errorsDT.AppendLine("Введите имя");
-            if (BoxPatronymic.Text == null)
+            if (string.IsNullOrEmpty(BoxPatronymic.Text))
                 errorsDT.AppendLine("Введите отчество");
-            if (BoxTelefon.Text == null)
+            if (string.IsNullOrEmpty(BoxTelefon.Text))
                 errorsDT.AppendLine("Введите телефон");
-            if (BoxBirthday.Text == null)
+            if (string.IsNullOrEmpty(BoxBirthday.Text))
                 errorsDT.AppendLine("Введите дату рождения");
-            if (BoxGender.Text == null)
+            if (string.IsNullOrEmpty(BoxGender.Text))
                 errorsDT.AppendLine("Введите пол");
-            if (BoxLoginName.Text == null)
+            if (string.IsNullOrEmpty(BoxLoginName.Text))
                 errorsDT.AppendLine("Введите логин");
-            if (BoxPasswordName.Text == null)
+            if (string.IsNullOrEmpty(BoxPasswordName.Text))
                 errorsDT.AppendLine("Введите пароль");
-            errorsDT.Clear();
+            if (int.Parse(BoxIdRole.Text) == 0)
+                errorsDT.AppendLine("Введите роль");
+            if (errorsDT.Length > 0)
+            {
+                MessageBox.Show(errorsDT.ToString());
+                return;
+            }
+            if (_currentUser.id > 0)
+            {
+                BarbershopIvanEntities.GetContext().Clients.Add(_currentUser);
+            }
+            try
+            {
+                BarbershopIvanEntities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена");
+                Manager.MyFrame.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

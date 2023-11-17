@@ -21,7 +21,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Авторизация" Grid.Column="2" Padding="{Binding MyFrame, XPath=Title}"></TextBlock>
+        <TextBlock Text="{Binding ElementName=MyFrame, Path=Content.Title}" Grid.Column="2" Width="auto"></TextBlock>
         <Button x:Name="butGost" Content="Войти гостем" Grid.Column="4" Click="butGost_Click" Style="{StaticResource ButtonDelete}"></Button>
         <Frame x:Name="MyFrame" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="3" ContentRendered="MyFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
         <Button x:Name="btnBack" Content="Вернуться" Grid.Column="2" Grid.Row="4" Click="btnBack_Click" Style="{StaticResource ButtonDelete}"></Button>

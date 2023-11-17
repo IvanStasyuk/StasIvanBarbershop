@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StasIvanBarbershop.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="1080"
-      Title="Список клиентов">
+      Title="Список клиентов" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -45,5 +45,6 @@
         </DataGrid>
         <Button x:Name="btnAdd" Content="Добавить" Grid.Column="1" Grid.Row="4" Style="{StaticResource ButtonSave}" Click="btnAdd_Click"></Button>
         <Button x:Name="btnDel" Content="Удалить" Grid.Column="3" Grid.Row="4" Style="{StaticResource ButtonDelete}" Click="btnDel_Click"></Button>
+        <Button x:Name="btnPageVisits" Content="Даты посещений" Grid.Column="4" Grid.Row="4" Width="140" Style="{StaticResource ButtonSave}" Click="btnPageVisits_Click"></Button>
     </Grid>
 </Page>

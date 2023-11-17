@@ -68,6 +68,9 @@
     <Compile Include="Clients.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatesVisits.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +95,9 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Страницы фрейма\ClientVisits.xaml.cs">
+      <DependentUpon>ClientVisits.xaml</DependentUpon>
+    </Compile>
     <Page Include="Барбершоп.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Страницы фрейма\ClientTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Страницы фрейма\ClientVisits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

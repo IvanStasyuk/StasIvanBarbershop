@@ -38,6 +38,7 @@ namespace StasIvanBarbershop
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<DatesVisits> DatesVisits { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
