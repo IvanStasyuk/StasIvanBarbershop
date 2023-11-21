@@ -16,48 +16,41 @@ using System.Windows.Shapes;
 namespace StasIvanBarbershop.Страницы_фрейма
 {
     /// <summary>
-    /// Логика взаимодействия для AddClient.xaml
+    /// Логика взаимодействия для AddVisit.xaml
     /// </summary>
-    public partial class AddClient : Page
+    public partial class AddVisit : Page
     {
-        private Clients AddingClient = new Clients();
-        public AddClient(Clients hosted)
+        private DatesVisits AddingVisit = new DatesVisits();
+        public AddVisit(DatesVisits hosteds)
         {
             InitializeComponent();
-            DataContext = AddingClient;
-            if (hosted != null)
-                AddingClient = hosted;
-            DataContext = AddingClient;
+            DataContext = AddingVisit;
+            if (hosteds != null)
+                AddingVisit = hosteds;
+            DataContext = AddingVisit;
         }
+
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errorsDT = new StringBuilder();
-            if (string.IsNullOrEmpty(BoxFamilia.Text))
+            if (string.IsNullOrEmpty(BoxLoginVisit.Text))
                 errorsDT.AppendLine("Введите фамилию");
-            if (string.IsNullOrEmpty(BoxName.Text))
+            if (string.IsNullOrEmpty(BoxNameVisit.Text))
                 errorsDT.AppendLine("Введите имя");
-            if (string.IsNullOrEmpty(BoxPatronymic.Text))
+            if (string.IsNullOrEmpty(BoxSurnameVisit.Text))
                 errorsDT.AppendLine("Введите отчество");
-            if (string.IsNullOrEmpty(BoxTelefon.Text))
+            if (string.IsNullOrEmpty(DateFirstVisitBox.Text))
                 errorsDT.AppendLine("Введите телефон");
-            if (string.IsNullOrEmpty(BoxBirthday.Text))
+            if (string.IsNullOrEmpty(DateLaterVisitBox.Text))
                 errorsDT.AppendLine("Введите дату рождения");
-            if (string.IsNullOrEmpty(BoxGender.Text))
-                errorsDT.AppendLine("Введите пол");
-            if (string.IsNullOrEmpty(BoxLoginName.Text))
-                errorsDT.AppendLine("Введите логин");
-            if (string.IsNullOrEmpty(BoxPasswordName.Text))
-                errorsDT.AppendLine("Введите пароль");
-            if (int.Parse(BoxIdRole.Text) <= 0)
-                errorsDT.AppendLine("Введите роль");
             if (errorsDT.Length > 0)
             {
                 MessageBox.Show(errorsDT.ToString());
                 return;
             }
-            if (AddingClient.id > 0)
+            if (AddingVisit.id_Client > 0)
             {
-                BarbershopIvanEntitiesBD.GetContext().Clients.Add(AddingClient);
+                BarbershopIvanEntitiesBD.GetContext().DatesVisits.Add(AddingVisit);
             }
             try
             {

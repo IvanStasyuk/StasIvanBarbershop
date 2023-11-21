@@ -93,6 +93,9 @@
     <Compile Include="Страницы фрейма\AddClient.xaml.cs">
       <DependentUpon>AddClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Страницы фрейма\AddVisit.xaml.cs">
+      <DependentUpon>AddVisit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Страницы фрейма\ClientTable.xaml.cs">
       <DependentUpon>ClientTable.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Страницы фрейма\AddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Страницы фрейма\AddVisit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

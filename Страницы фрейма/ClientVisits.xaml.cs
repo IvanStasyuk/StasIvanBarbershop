@@ -23,26 +23,46 @@ namespace StasIvanBarbershop.Страницы_фрейма
         public ClientVisits()
         {
             InitializeComponent();
+            DTBarbershopVisits.ItemsSource = BarbershopIvanEntitiesBD.GetContext().Clients.ToList();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddVisit((sender as Button).DataContext as DatesVisits));
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddVisit(null));
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-
+            var VisitRemoving = DTBarbershopVisits.SelectedItems.Cast<DatesVisits>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить {VisitRemoving.Count()} элементов",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    BarbershopIvanEntitiesBD.GetContext().DatesVisits.RemoveRange(VisitRemoving);
+                    BarbershopIvanEntitiesBD.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+                    DTBarbershopVisits.ItemsSource = BarbershopIvanEntitiesBD.GetContext().DatesVisits.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
 
-        private void btnPageVisits_Click(object sender, RoutedEventArgs e)
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-
+            if (Visibility == Visibility.Visible)
+            {
+                BarbershopIvanEntitiesBD.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DTBarbershopVisits.ItemsSource = BarbershopIvanEntitiesBD.GetContext().DatesVisits.ToList();
+            }
         }
     }
 }
