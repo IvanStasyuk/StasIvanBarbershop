@@ -20,14 +20,11 @@ namespace StasIvanBarbershop.Страницы_фрейма
     /// </summary>
     public partial class AddClient : Page
     {
-        private Clients _currentUser = new Clients();
-        public AddClient(Clients context)
+        private Clients AddingClient = new Clients();
+        public AddClient()
         {
             InitializeComponent();
-            if (context != null)
-                _currentUser = context;
-            DataContext = _currentUser;
-
+            DataContext = AddingClient;
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -55,13 +52,13 @@ namespace StasIvanBarbershop.Страницы_фрейма
                 MessageBox.Show(errorsDT.ToString());
                 return;
             }
-            if (_currentUser.id > 0)
+            if (AddingClient.id > 0)
             {
-                BarbershopIvanEntities.GetContext().Clients.Add(_currentUser);
+                BarbershopIvanEntitiesBD.GetContext().Clients.Add(AddingClient);
             }
             try
             {
-                BarbershopIvanEntities.GetContext().SaveChanges();
+                BarbershopIvanEntitiesBD.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена");
                 Manager.MyFrame.GoBack();
             }

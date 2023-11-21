@@ -23,11 +23,11 @@ namespace StasIvanBarbershop.Pages
         public ClientTable()
         {
             InitializeComponent();
-            DTBarbershopClient.ItemsSource = BarbershopIvanEntities.GetContext().Clients.ToList();
+            DTBarbershopClient.ItemsSource = BarbershopIvanEntitiesBD.GetContext().Clients.ToList();
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient(null));
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient());
             return;
         }
         private void btnDel_Click(object sender, RoutedEventArgs e)
@@ -38,10 +38,10 @@ namespace StasIvanBarbershop.Pages
             {
                 try
                 {
-                    BarbershopIvanEntities.GetContext().Clients.RemoveRange(ClientRemoving);
-                    BarbershopIvanEntities.GetContext().SaveChanges();
+                    BarbershopIvanEntitiesBD.GetContext().Clients.RemoveRange(ClientRemoving);
+                    BarbershopIvanEntitiesBD.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
-                    DTBarbershopClient.ItemsSource = BarbershopIvanEntities.GetContext().Clients.ToList();
+                    DTBarbershopClient.ItemsSource = BarbershopIvanEntitiesBD.GetContext().Clients.ToList();
                 }
                 catch (Exception ex)
                 {
@@ -51,14 +51,14 @@ namespace StasIvanBarbershop.Pages
         }
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient((sender as Button).DataContext as Clients));
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient());
         }
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)
             {
-                BarbershopIvanEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                DTBarbershopClient.ItemsSource = BarbershopIvanEntities.GetContext().Clients.ToList();
+                BarbershopIvanEntitiesBD.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DTBarbershopClient.ItemsSource = BarbershopIvanEntitiesBD.GetContext().Clients.ToList();
             }
         }
         private void btnPageVisits_Click(object sender, RoutedEventArgs e)

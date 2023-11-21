@@ -8,6 +8,6 @@ namespace StasIvanBarbershop
 {
     internal class ModelClass
     {
-        public static BarbershopIvanEntities ModelBarbershop;
+        public static BarbershopIvanEntitiesBD ModelBarbershop;
     }
 }

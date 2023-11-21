@@ -31,7 +31,7 @@ namespace StasIvanBarbershop.Pages
             LoginBox.AppendText(errors.ToString());
             PasswordBox.AppendText(errors.ToString());
 
-            var VhodClient = BarbershopIvanEntities.GetContext().Clients.FirstOrDefault(x => x.Login == LoginBox.Text && x.Password == PasswordBox.Text);
+            var VhodClient = BarbershopIvanEntitiesBD.GetContext().Clients.FirstOrDefault(x => x.Login == LoginBox.Text && x.Password == PasswordBox.Text);
             if (VhodClient == null)
             {
                 MessageBox.Show("Пользователь не найден", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Information);
