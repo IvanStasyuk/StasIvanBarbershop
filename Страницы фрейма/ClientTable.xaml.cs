@@ -25,11 +25,6 @@ namespace StasIvanBarbershop.Pages
             InitializeComponent();
             DTBarbershopClient.ItemsSource = BarbershopIvanEntitiesBD.GetContext().Clients.ToList();
         }
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient());
-            return;
-        }
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
             var ClientRemoving = DTBarbershopClient.SelectedItems.Cast<Clients>().ToList();
@@ -51,7 +46,7 @@ namespace StasIvanBarbershop.Pages
         }
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient());
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient((sender as Button).DataContext as Clients));
         }
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
@@ -64,6 +59,12 @@ namespace StasIvanBarbershop.Pages
         private void btnPageVisits_Click(object sender, RoutedEventArgs e)
         {
             Manager.MyFrame.Navigate(new Страницы_фрейма.ClientVisits());
+            return;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MyFrame.Navigate(new Страницы_фрейма.AddClient(null));
             return;
         }
     }

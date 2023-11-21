@@ -21,9 +21,12 @@ namespace StasIvanBarbershop.Страницы_фрейма
     public partial class AddClient : Page
     {
         private Clients AddingClient = new Clients();
-        public AddClient()
+        public AddClient( Clients hosted)
         {
             InitializeComponent();
+            DataContext = AddingClient;
+            if (hosted != null)
+                AddingClient = hosted;
             DataContext = AddingClient;
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -45,14 +48,14 @@ namespace StasIvanBarbershop.Страницы_фрейма
                 errorsDT.AppendLine("Введите логин");
             if (string.IsNullOrEmpty(BoxPasswordName.Text))
                 errorsDT.AppendLine("Введите пароль");
-            if (int.Parse(BoxIdRole.Text) == 0)
+            if (int.Parse(BoxIdRole.Text) <= 0)
                 errorsDT.AppendLine("Введите роль");
             if (errorsDT.Length > 0)
             {
                 MessageBox.Show(errorsDT.ToString());
                 return;
             }
-            if (AddingClient.id > 0)
+            if (AddingClient.idRole > 0)
             {
                 BarbershopIvanEntitiesBD.GetContext().Clients.Add(AddingClient);
             }

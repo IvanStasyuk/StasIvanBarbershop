@@ -25,7 +25,6 @@
         </Grid.RowDefinitions>
         <DataGrid x:Name="DTBarbershopClient" Grid.ColumnSpan="5" Grid.RowSpan="4" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер" Binding="{Binding id}" Width="auto" ></DataGridTextColumn>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="auto"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="auto"></DataGridTextColumn>
                 <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" Width="auto"></DataGridTextColumn>

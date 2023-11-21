@@ -6,9 +6,40 @@
       xmlns:local="clr-namespace:StasIvanBarbershop.Страницы_фрейма"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ClientVisits">
+      Title="Посещение клиентов">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DTBarbershopVisits" Grid.ColumnSpan="5" Grid.RowSpan="4" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Surname}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Patronymic}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата первого посещения" Binding="{Binding Telefon}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата последнего посещения" Binding="{Binding DateOfBirthday}" Width="auto"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEdit" Width="auto" Content="Редактировать" Style="{StaticResource ButtonDelete}" Click="btnEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAdd" Content="Добавить" Grid.Column="1" Grid.Row="4" Style="{StaticResource ButtonSave}" Click="btnAdd_Click"></Button>
+        <Button x:Name="btnDel" Content="Удалить" Grid.Column="3" Grid.Row="4" Style="{StaticResource ButtonDelete}" Click="btnDel_Click"></Button>
     </Grid>
 </Page>

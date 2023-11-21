@@ -24,5 +24,25 @@ namespace StasIvanBarbershop.Страницы_фрейма
         {
             InitializeComponent();
         }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPageVisits_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
