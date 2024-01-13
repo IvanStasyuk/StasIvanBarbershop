@@ -28,8 +28,8 @@
                 <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="auto"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="auto"></DataGridTextColumn>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата первого посещения" Binding="{Binding Дата_первого_посещения}" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата последнего посещения" Binding="{Binding Дата_последнего_посещения}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата первого посещения" Binding="{Binding Дата_первого_посещения}" Width="180"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата последнего посещения" Binding="{Binding Дата_последнего_посещения}" Width="180"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

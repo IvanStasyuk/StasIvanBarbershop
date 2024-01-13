@@ -87,6 +87,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="ModelClass.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Quest.xaml.cs">
+      <DependentUpon>Quest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Roles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -102,6 +110,16 @@
     <Compile Include="Страницы фрейма\ClientVisits.xaml.cs">
       <DependentUpon>ClientVisits.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Страницы фрейма\ListTovar.xaml.cs">
+      <DependentUpon>ListTovar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Страницы фрейма\OneProduct.xaml.cs">
+      <DependentUpon>OneProduct.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Quest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Барбершоп.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -134,6 +152,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Страницы фрейма\ListTovar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Страницы фрейма\OneProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.cs" />
@@ -143,11 +169,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -155,6 +176,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
@@ -174,13 +196,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\5d7d94d3e948d06e3fe93ded86be89e8.jpg" />
+    <Resource Include="Resources\null.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\barber-shop-logo-clipart-3.png" />
+    <Resource Include="Resources\barberlogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\icons8-мужчина-расчесывает-волосы-100.png" />
+    <Resource Include="Resources\barber.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\priority-headline-logo-square.ico" />
@@ -202,6 +224,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\bestfar.png" />
+    <Resource Include="Resources\star.png" />
+    <Resource Include="Resources\povodok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

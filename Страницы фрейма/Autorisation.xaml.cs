@@ -28,8 +28,15 @@ namespace StasIvanBarbershop.Pages
         private void btnVhod_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            LoginBox.AppendText(errors.ToString());
-            PasswordBox.AppendText(errors.ToString());
+            if (string.IsNullOrEmpty(LoginBox.Text))
+                errors.AppendLine("Логин не введён");
+            if (string.IsNullOrEmpty(PasswordBox.Text))
+                errors.AppendLine("Пароль не введён");
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
 
             var VhodClient = BarbershopIvanEntitiesBD.GetContext().Clients.FirstOrDefault(x => x.Login == LoginBox.Text && x.Password == PasswordBox.Text);
             if (VhodClient == null)

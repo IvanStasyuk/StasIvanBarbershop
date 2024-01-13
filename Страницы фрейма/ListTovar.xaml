@@ -1,0 +1,31 @@
+﻿<Page x:Class="StasIvanBarbershop.Страницы_фрейма.ListTovar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StasIvanBarbershop.Страницы_фрейма"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListTovar">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="Aqua" Grid.Row="4" Grid.ColumnSpan="5" Margin="15"></Rectangle>
+        <Button x:Name="BuyProduct" Content="Купить" Background="LightGreen" Grid.Row="4" Grid.Column="1" Click="BuyProduct_Click"></Button>
+        <Button x:Name="CreateProduct" Content="Создать" Background="CadetBlue" Grid.Row="4" Grid.Column="2" Click="CreateProduct_Click"></Button>
+        <Button x:Name="DeleteProduct" Content="Продать" Background="Red" Grid.Row="4" Grid.Column="3" Click="DeleteProduct_Click"></Button>
+    </Grid> 
+</Page>

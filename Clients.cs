@@ -26,5 +26,13 @@ namespace StasIvanBarbershop
         public Nullable<int> idRole { get; set; }
     
         public virtual Roles Roles { get; set; }
+        public string ImagePreview
+        {
+            get
+            {
+                return "/Resources/" + "Null.jpg";
+            }
+        }
+
     }
 }

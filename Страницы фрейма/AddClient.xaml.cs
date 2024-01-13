@@ -24,7 +24,6 @@ namespace StasIvanBarbershop.Страницы_фрейма
         public AddClient(Clients hosted)
         {
             InitializeComponent();
-            DataContext = AddingClient;
             if (hosted != null)
                 AddingClient = hosted;
             DataContext = AddingClient;

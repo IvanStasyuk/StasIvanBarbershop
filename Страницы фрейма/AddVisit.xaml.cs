@@ -24,7 +24,6 @@ namespace StasIvanBarbershop.Страницы_фрейма
         public AddVisit(DatesVisits hosteds)
         {
             InitializeComponent();
-            DataContext = AddingVisit;
             if (hosteds != null)
                 AddingVisit = hosteds;
             DataContext = AddingVisit;
@@ -34,7 +33,7 @@ namespace StasIvanBarbershop.Страницы_фрейма
         {
             StringBuilder errorsDT = new StringBuilder();
             if (string.IsNullOrEmpty(BoxLoginVisit.Text))
-                errorsDT.AppendLine("Введите фамилию");
+                errorsDT.AppendLine("Введите логин");
             if (string.IsNullOrEmpty(BoxNameVisit.Text))
                 errorsDT.AppendLine("Введите имя");
             if (string.IsNullOrEmpty(BoxSurnameVisit.Text))
@@ -48,7 +47,7 @@ namespace StasIvanBarbershop.Страницы_фрейма
                 MessageBox.Show(errorsDT.ToString());
                 return;
             }
-            if (AddingVisit.id_Client > 0)
+            if (int.Parse(Word.Text) > 0)
             {
                 BarbershopIvanEntitiesBD.GetContext().DatesVisits.Add(AddingVisit);
             }

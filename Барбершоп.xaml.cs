@@ -52,5 +52,12 @@ namespace StasIvanBarbershop
             Manager.MyFrame.Navigate(new Pages.ClientTable());
             return;
         }
+
+        private void OneProduct_Click(object sender, RoutedEventArgs e)
+        {
+            Quest window1 = new Quest();
+            window1.Show();
+            this.Close();
+        }
     }
 }
